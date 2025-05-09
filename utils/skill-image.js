@@ -98,6 +98,7 @@ import testing from '../app/assets/svg/skills/testing.svg'
 import github from '../app/assets/svg/skills/github.svg'
 import sql from '../app/assets/svg/skills/sql.svg'
 import localstorage from '../app/assets/svg/skills/local_storage.svg'
+import api from '../app/assets/svg/skills/api.svg'
 
 
 
@@ -269,7 +270,7 @@ export const skillsImage = (skill) => {
     case 'sqlalchemy':
       return sqlalchemy;
     case 'restful apis':
-      return fastapi;
+      return api;
     case 'bloc':
       return bloc;
     case 'provider':
