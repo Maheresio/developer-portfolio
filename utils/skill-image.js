@@ -81,6 +81,24 @@ import kubernetes from '../app/assets/svg/skills/kubernetes.svg'
 import linux from '../app/assets/svg/skills/linux.svg'
 import sqlalchemy from '../app/assets/svg/skills/sqlalchemy.svg'
 import fastapi from '../app/assets/svg/skills/fastapi.svg'
+import bloc from '../app/assets/svg/skills/bloc.svg'
+import provider from '../app/assets/svg/skills/provider.svg'
+import riverpod from '../app/assets/svg/skills/riverpod.svg'
+import solid from '../app/assets/svg/skills/solid_principles.svg'
+import responsive from '../app/assets/svg/skills/responsive.svg'
+import oop from '../app/assets/svg/skills/oop.svg'
+import mvvm from '../app/assets/svg/skills/mvvm.svg'
+import mvc from '../app/assets/svg/skills/mvc.svg'
+import cleancode from '../app/assets/svg/skills/clean_code.svg'
+import cleanarchitecture from '../app/assets/svg/skills/clean_architecture.svg'
+import designpatterns from '../app/assets/svg/skills/design_patterns.svg'
+import datastructures from '../app/assets/svg/skills/data_structures.svg'
+import postman from '../app/assets/svg/skills/postman.svg'
+import testing from '../app/assets/svg/skills/testing.svg'
+import github from '../app/assets/svg/skills/github.svg'
+import sql from '../app/assets/svg/skills/sql.svg'
+import localstorage from '../app/assets/svg/skills/local_storage.svg'
+
 
 
 
@@ -186,6 +204,7 @@ export const skillsImage = (skill) => {
     case 'lightroom':
       return lightroom;
     case 'materialui':
+    case 'material design':
       return materialui;
     case 'nginx':
       return nginx;
@@ -249,8 +268,42 @@ export const skillsImage = (skill) => {
       return linux;
     case 'sqlalchemy':
       return sqlalchemy;
-    case 'fastapi':
+    case 'restful apis':
       return fastapi;
+    case 'bloc':
+      return bloc;
+    case 'provider':
+      return provider;
+    case 'riverpod':
+      return riverpod;
+    case 'clean architecture':
+      return cleanarchitecture;
+    case 'clean code':
+      return cleancode;
+    case 'data structures':
+      return datastructures;
+    case 'mvvm architecture':
+      return mvvm;
+    case 'mvc architecture':
+      return mvc;
+    case 'solid principles':
+      return solid;
+    case 'oop':
+      return oop;
+    case 'responsive design':
+      return responsive;
+    case 'design patterns':
+      return designpatterns;
+    case 'postman':
+      return postman;
+    case 'testing':
+      return testing;
+    case 'github':
+      return github;
+    case 'sql':
+      return sql;
+   case 'local storage':
+      return localstorage;
     default:
       break;
   }
