@@ -1,0 +1,8 @@
+Remove all blog-related files and code:
+- Delete /app/blog/page.js
+- Delete /app/components/homepage/blog/index.jsx
+- Delete /app/components/homepage/blog/blog-card.jsx
+- Delete /app/components/homepage/blog/ directory if empty
+- Remove any blog-related imports or code from the rest of the project
+
+This is a tracking file for the blog section removal.
