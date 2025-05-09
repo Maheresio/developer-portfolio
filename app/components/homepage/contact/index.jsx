@@ -11,74 +11,122 @@ import ContactForm from './contact-form';
 
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white">
-      <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
-          CONTACT
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-        <ContactForm />
-        <div className="lg:w-3/4 ">
-          <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <MdAlternateEmail
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>{personalData.email}</span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <IoMdCall
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.phone}
-              </span>
-            </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
-              <CiLocationOn
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={36}
-              />
-              <span>
-                {personalData.address}
-              </span>
-            </p>
+    <div id="contact" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b] pt-12">
+      {/* Background elements */}
+      <div className="absolute top-20 right-20 w-64 h-64 bg-violet-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 left-20 w-72 h-72 bg-pink-500/5 rounded-full blur-3xl"></div>
+
+      {/* Section heading */}
+      <div className="flex justify-center mb-12">
+        <div className="flex items-center relative">
+          <span className="w-24 h-[2px] bg-gradient-to-r from-transparent to-[#1a1443]"></span>
+          <div className="bg-gradient-to-r from-[#1a1443]/90 to-[#1a1443] w-fit text-white px-8 py-3 text-2xl font-medium rounded-md relative overflow-hidden group">
+            <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-pink-500/10 via-violet-500/10 to-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <span className="relative z-10">Get In Touch</span>
+            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500 group-hover:w-full transition-all duration-700 ease-in-out"></div>
           </div>
-          <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
-            <Link target="_blank" href={personalData.github}>
-              <IoLogoGithub
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.linkedIn}>
-              <BiLogoLinkedin
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.twitter}>
-              <FaXTwitter
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.stackOverflow}>
-              <FaStackOverflow
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
-            <Link target="_blank" href={personalData.facebook}>
-              <FaFacebook
-                className="bg-[#8b98a5] p-3 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
-                size={48}
-              />
-            </Link>
+          <span className="w-24 h-[2px] bg-gradient-to-r from-[#1a1443] to-transparent"></span>
+        </div>
+      </div>
+
+      {/* Contact content */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {/* Contact form side */}
+        <div className="relative">
+          <div className="bg-gradient-to-br from-[#1d1d42]/80 to-[#161331] border border-[#25213b]/50 rounded-xl overflow-hidden shadow-lg p-1">
+            {/* Top decoration bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500"></div>
+
+            <div className="p-6 md:p-8 backdrop-blur-sm">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+
+        {/* Contact info side */}
+        <div className="flex flex-col gap-10">
+          {/* Contact details card */}
+          <div className="bg-gradient-to-br from-[#1d1d42]/80 to-[#161331] border border-[#25213b]/50 rounded-xl overflow-hidden shadow-lg">
+            {/* Top decoration bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500"></div>
+
+            <div className="p-6 md:p-8 relative backdrop-blur-sm">
+              <h3 className="text-xl font-semibold text-white mb-6">Contact Information</h3>
+
+              <div className="space-y-6">
+                <div className="flex items-center gap-5 group">
+                  <div className="bg-[#1a1443]/70 p-3 rounded-lg text-violet-400 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <MdAlternateEmail size={24} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Email</p>
+                    <p className="text-white font-medium">{personalData.email}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-5 group">
+                  <div className="bg-[#1a1443]/70 p-3 rounded-lg text-violet-400 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <IoMdCall size={24} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Phone</p>
+                    <p className="text-white font-medium">{personalData.phone}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-5 group">
+                  <div className="bg-[#1a1443]/70 p-3 rounded-lg text-violet-400 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <CiLocationOn size={24} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400 mb-1">Location</p>
+                    <p className="text-white font-medium">{personalData.address}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social links card */}
+          <div className="bg-gradient-to-br from-[#1d1d42]/80 to-[#161331] border border-[#25213b]/50 rounded-xl overflow-hidden shadow-lg">
+            {/* Top decoration bar */}
+            <div className="h-1 w-full bg-gradient-to-r from-pink-500 via-violet-500 to-indigo-500"></div>
+
+            <div className="p-6 md:p-8 relative backdrop-blur-sm">
+              <h3 className="text-xl font-semibold text-white mb-6">Connect With Me</h3>
+
+              <div className="flex flex-wrap gap-4 md:gap-6">
+                <Link target="_blank" href={personalData.github} className="group">
+                  <div className="bg-[#1a1443]/70 p-4 rounded-lg text-violet-300 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <IoLogoGithub size={28} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                </Link>
+
+                <Link target="_blank" href={personalData.linkedIn} className="group">
+                  <div className="bg-[#1a1443]/70 p-4 rounded-lg text-violet-300 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <BiLogoLinkedin size={28} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                </Link>
+
+                <Link target="_blank" href={personalData.twitter} className="group">
+                  <div className="bg-[#1a1443]/70 p-4 rounded-lg text-violet-300 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <FaXTwitter size={28} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                </Link>
+
+                <Link target="_blank" href={personalData.stackOverflow} className="group">
+                  <div className="bg-[#1a1443]/70 p-4 rounded-lg text-violet-300 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <FaStackOverflow size={28} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                </Link>
+
+                <Link target="_blank" href={personalData.facebook} className="group">
+                  <div className="bg-[#1a1443]/70 p-4 rounded-lg text-violet-300 shadow-md border border-indigo-800/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-violet-500/20">
+                    <FaFacebook size={28} className="group-hover:text-[#16f2b3]" />
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
