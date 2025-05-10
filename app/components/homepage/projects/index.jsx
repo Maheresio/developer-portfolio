@@ -59,9 +59,25 @@ const Projects = () => {
                 {/* Project image */}
                 <div className="relative h-48 overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    {project.id === 1 ? (
+                    {project.name.toLowerCase().includes('meal recommendation') ? (
                       <div className="w-full h-full">
                         <AnimationLottie animationPath={require('../../../assets/lottie/meal_recommendation.json')} />
+                      </div>
+                    ) : project.name.toLowerCase().includes('pixels') ? (
+                      <div className="w-full h-full">
+                        <AnimationLottie animationPath={require('../../../assets/lottie/pixels.json')} />
+                      </div>
+                    ) : project.name.toLowerCase().includes('news') ? (
+                      <div className="w-full h-full">
+                        <AnimationLottie animationPath={require('../../../assets/lottie/news.json')} />
+                      </div>
+                    ) : project.name.toLowerCase().includes('movies') ? (
+                      <div className="w-full h-full">
+                        <AnimationLottie animationPath={require('../../../assets/lottie/movies.json')} />
+                      </div>
+                    ) : project.name.toLowerCase().includes('bookly') ? (
+                      <div className="w-full h-full">
+                        <AnimationLottie animationPath={require('../../../assets/lottie/bookly.json')} />
                       </div>
                     ) : (
                       <Image
@@ -130,9 +146,25 @@ const Projects = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 {/* Project icon */}
                 <div className="w-full md:w-1/3 aspect-square bg-[#1a1443]/30 rounded-lg p-4 flex items-center justify-center">
-                  {selectedProject.id === 1 ? (
+                  {selectedProject.name.toLowerCase().includes('meal recommendation') ? (
                     <div className="w-full h-full">
                       <AnimationLottie animationPath={require('../../../assets/lottie/meal_recommendation.json')} />
+                    </div>
+                  ) : selectedProject.name.toLowerCase().includes('pixels') ? (
+                    <div className="w-full h-full">
+                      <AnimationLottie animationPath={require('../../../assets/lottie/pixels.json')} />
+                    </div>
+                  ) : selectedProject.name.toLowerCase().includes('news') ? (
+                    <div className="w-full h-full">
+                      <AnimationLottie animationPath={require('../../../assets/lottie/news.json')} />
+                    </div>
+                  ) : selectedProject.name.toLowerCase().includes('movies') ? (
+                    <div className="w-full h-full">
+                      <AnimationLottie animationPath={require('../../../assets/lottie/movies.json')} />
+                    </div>
+                  ) : selectedProject.name.toLowerCase().includes('bookly') ? (
+                    <div className="w-full h-full">
+                      <AnimationLottie animationPath={require('../../../assets/lottie/bookly.json')} />
                     </div>
                   ) : (
                     <Image
