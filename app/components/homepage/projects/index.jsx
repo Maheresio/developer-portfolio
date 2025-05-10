@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaPlay, FaTimes } from 'react-icons/fa';
+import AnimationLottie from '../../helper/animation-lottie';
 
 // Number of project icons available
 const PROJECT_ICONS_COUNT = 9;
@@ -48,7 +49,7 @@ const Projects = () => {
                 {/* Background project icon */}
                 <div className="absolute top-0 right-0 opacity-10 w-32 h-32 transform translate-x-8 -translate-y-4">
                   <Image
-                    src={`/svg/projects/${(index % PROJECT_ICONS_COUNT) + 1}.svg`}
+                    src={`/projects/${(index % PROJECT_ICONS_COUNT) + 1}.svg`}
                     alt=""
                     width={128}
                     height={128}
@@ -58,13 +59,19 @@ const Projects = () => {
                 {/* Project image */}
                 <div className="relative h-48 overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center p-4">
-                    <Image
-                      src={`/svg/projects/${(index % PROJECT_ICONS_COUNT) + 1}.svg`}
-                      alt={project.name}
-                      width={200}
-                      height={200}
-                      className="object-contain opacity-70"
-                    />
+                    {project.id === 1 ? (
+                      <div className="w-full h-full">
+                        <AnimationLottie animationPath={require('../../../assets/lottie/meal_recommendation.json')} />
+                      </div>
+                    ) : (
+                      <Image
+                        src={`/projects/${(index % PROJECT_ICONS_COUNT) + 1}.svg`}
+                        alt={project.name}
+                        width={200}
+                        height={200}
+                        className="object-contain opacity-70"
+                      />
+                    )}
                   </div>
                 </div>
 
@@ -123,13 +130,19 @@ const Projects = () => {
               <div className="flex flex-col md:flex-row items-start gap-6">
                 {/* Project icon */}
                 <div className="w-full md:w-1/3 aspect-square bg-[#1a1443]/30 rounded-lg p-4 flex items-center justify-center">
-                  <Image
-                    src={`/svg/projects/${(selectedProject.id % PROJECT_ICONS_COUNT) + 1}.svg`}
-                    alt={selectedProject.name}
-                    width={250}
-                    height={250}
-                    className="object-contain opacity-90"
-                  />
+                  {selectedProject.id === 1 ? (
+                    <div className="w-full h-full">
+                      <AnimationLottie animationPath={require('../../../assets/lottie/meal_recommendation.json')} />
+                    </div>
+                  ) : (
+                    <Image
+                      src={`/projects/${(selectedProject.id % PROJECT_ICONS_COUNT) + 1}.svg`}
+                      alt={selectedProject.name}
+                      width={250}
+                      height={250}
+                      className="object-contain opacity-90"
+                    />
+                  )}
                 </div>
 
                 {/* Project info */}
